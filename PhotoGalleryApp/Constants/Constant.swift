@@ -11,6 +11,5 @@ import UIKit
 enum Constant {
     static let galleryURL = "https://www.flickr.com/services/feeds/photos_public.gne?tags=soccer&format=json&nojsoncallback=?"
     static let placeholderCatImage = UIImage(named: "PlaceholderCatImage")
-    
     static let imageStoryboardID = "ImageVC"
 }

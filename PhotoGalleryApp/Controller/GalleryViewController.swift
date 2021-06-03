@@ -93,7 +93,6 @@ extension GalleryViewController: UITableViewDataSource {
 //MARK: - UITableViewDelegate
 extension GalleryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Row selected: \(indexPath.row)")
         let imageVC = (storyboard?.instantiateViewController(identifier: GalleryStoryboardID.imageStoryboardID))! as ImageViewController
         
         let galleryImageUrl = URL(string: self.galleryDetails.items[indexPath.row].media.m)!

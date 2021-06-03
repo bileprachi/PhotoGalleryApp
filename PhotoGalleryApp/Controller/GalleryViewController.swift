@@ -15,6 +15,7 @@ class GalleryViewController: UIViewController {
     private var galleryViewModelObj: GalleryViewModel!
     private var noOfRowsInSection: Int = 1
     private var galleryDetails: GalleryData!
+    let reachability = try! Reachability()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,10 @@ class GalleryViewController: UIViewController {
     func createObjects() {
         galleryViewModelObj = GalleryViewModel()
     }
+    
+    deinit {
+        reachability.stopNotifier()
+    }
 }
 
 //MARK: - GalleryViewModelDelegate
@@ -43,11 +48,20 @@ extension GalleryViewController: GalleryViewModelDelegate {
             self.galleyTableView.reloadData()
         }
     }
-    
     func didGetGalleryData(galleryData gallery: GalleryData) {
         galleryDetails = gallery
         DispatchQueue.main.async {
             self.galleyTableView.reloadData()
+        }
+    }
+    func didFailWithError(responseErr responseError: String) {
+        print("Error: \(responseError)")
+        if responseError != GalleryError.noError.rawValue {
+            DispatchQueue.main.async {
+                let errorVC = self.storyboard?.instantiateViewController(identifier: GalleryStoryboardID.errorStoryboardID) as! ErrorMessageViewController
+                
+                self.present(errorVC, animated: true, completion: nil)
+            }
         }
     }
 }
@@ -63,7 +77,7 @@ extension GalleryViewController: UITableViewDataSource {
         let galleryCell = galleyTableView.dequeueReusableCell(withIdentifier: "PhotoGalleryCell", for: indexPath) as! GalleryTableViewCell
         if galleryDetails == nil {
             galleryCell.galleryImageNameLbl.text = ""
-            galleryCell.galleryImageView.image = Constant.placeholderCatImage
+            galleryCell.galleryImageView.image = GalleryPlaceholderImage.placeholderCatImage
         }else {
             let galleryImageUrl = URL(string: self.galleryDetails.items[indexPath.row].media.m)!
             let imageSafeData = try? Data(contentsOf: galleryImageUrl)
@@ -80,7 +94,7 @@ extension GalleryViewController: UITableViewDataSource {
 extension GalleryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Row selected: \(indexPath.row)")
-        let imageVC = (storyboard?.instantiateViewController(identifier: Constant.imageStoryboardID))! as ImageViewController
+        let imageVC = (storyboard?.instantiateViewController(identifier: GalleryStoryboardID.imageStoryboardID))! as ImageViewController
         
         let galleryImageUrl = URL(string: self.galleryDetails.items[indexPath.row].media.m)!
         let imageSafeData = try? Data(contentsOf: galleryImageUrl)
@@ -95,3 +109,5 @@ extension GalleryViewController: UITableViewDelegate {
         self.navigationController?.pushViewController(imageVC, animated: true)
     }
 }
+
+

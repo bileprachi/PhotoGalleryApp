@@ -76,11 +76,14 @@ extension GalleryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let galleryCell = galleyTableView.dequeueReusableCell(withIdentifier: "PhotoGalleryCell", for: indexPath) as! GalleryTableViewCell
         if galleryDetails == nil {
-            galleryCell.galleryImageNameLbl.text = ""
-            galleryCell.galleryImageView.image = GalleryPlaceholderImage.placeholderCatImage
+            galleryCell.galleryImageNameLbl.text = GalleryPlaceholder.placeholderImageNameText
+            galleryCell.dateOfImageTaken.text = GalleryPlaceholder.placeholderDateText
+            galleryCell.galleryImageView.contentMode = .scaleAspectFit
+            galleryCell.galleryImageView.image = GalleryPlaceholder.placeholderCatImage
         }else {
             let galleryImageUrl = URL(string: self.galleryDetails.items[indexPath.row].media.m)!
             let imageSafeData = try? Data(contentsOf: galleryImageUrl)
+            galleryCell.galleryImageView.contentMode = .scaleToFill
             galleryCell.galleryImageView.image = UIImage(data: imageSafeData!)
             galleryCell.galleryImageNameLbl.text = self.galleryDetails.items[indexPath.row].title
             galleryCell.dateOfImageTaken.text = self.galleryDetails.items[indexPath.row].dateTaken

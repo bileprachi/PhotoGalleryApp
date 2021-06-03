@@ -12,7 +12,9 @@ enum GalleryURL {
     static let galleryURL = "https://www.flickr.com/services/feeds/photos_public.gne?tags=soccer&format=json&nojsoncallback=?"
 }
 
-enum GalleryPlaceholderImage {
+enum GalleryPlaceholder {
+    static let placeholderDateText = ""
+    static let placeholderImageNameText = "Loading..."
     static let placeholderCatImage = UIImage(named: "PlaceholderCatImage")
 }
 

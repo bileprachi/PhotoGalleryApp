@@ -162,7 +162,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSP-kg-tgB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1813.0434782608697" y="75"/>
+            <point key="canvasLocation" x="1725" y="75"/>
+        </scene>
+        <!--Internet Connection Message View Controller-->
+        <scene sceneID="yS9-iG-VWY">
+            <objects>
+                <viewController storyboardIdentifier="InternectConnectionMessageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mbh-VZ-eO5" customClass="InternetConnectionMessageViewController" customModule="PhotoGalleryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sD9-Hy-5lC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoInternetImage" translatesAutoresizingMaskIntoConstraints="NO" id="9TC-Vy-px5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sXI-uF-aFA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9TC-Vy-px5" firstAttribute="leading" secondItem="sXI-uF-aFA" secondAttribute="leading" id="Ulv-a6-AQj"/>
+                            <constraint firstItem="sXI-uF-aFA" firstAttribute="trailing" secondItem="9TC-Vy-px5" secondAttribute="trailing" id="WKh-Gi-jiZ"/>
+                            <constraint firstItem="9TC-Vy-px5" firstAttribute="top" secondItem="sD9-Hy-5lC" secondAttribute="top" id="o3B-Vg-F3N"/>
+                            <constraint firstAttribute="bottom" secondItem="9TC-Vy-px5" secondAttribute="bottom" id="vPR-nY-7dG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="roh-BT-gE6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2423" y="75"/>
+        </scene>
+        <!--Error Message View Controller-->
+        <scene sceneID="gpP-MT-jwv">
+            <objects>
+                <viewController storyboardIdentifier="ErrorVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nqx-0j-a9L" customClass="ErrorMessageViewController" customModule="PhotoGalleryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Rv-kp-GZQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ErrorImage" translatesAutoresizingMaskIntoConstraints="NO" id="YJq-Bv-HeF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nTy-H5-tmw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nTy-H5-tmw" firstAttribute="trailing" secondItem="YJq-Bv-HeF" secondAttribute="trailing" id="7Wq-Vt-fwf"/>
+                            <constraint firstItem="YJq-Bv-HeF" firstAttribute="top" secondItem="0Rv-kp-GZQ" secondAttribute="top" id="YrF-rd-Jzn"/>
+                            <constraint firstAttribute="bottom" secondItem="YJq-Bv-HeF" secondAttribute="bottom" id="jYg-LQ-ZHy"/>
+                            <constraint firstItem="YJq-Bv-HeF" firstAttribute="leading" secondItem="nTy-H5-tmw" secondAttribute="leading" id="lh0-zF-QQk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ohi-Te-idU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3393" y="75"/>
         </scene>
         <!--Start Point-->
         <scene sceneID="a4n-s9-WY6">
@@ -190,10 +242,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Job-CU-lsI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="127.53623188405798" y="75"/>
+            <point key="canvasLocation" x="329" y="75"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ErrorImage" width="86" height="64.5"/>
+        <image name="NoInternetImage" width="131.5" height="210"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -19,6 +19,11 @@
 		C75E0301266664DC00DA04E5 /* GalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E0300266664DC00DA04E5 /* GalleryTableViewCell.swift */; };
 		C75E03042666660100DA04E5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E03032666660100DA04E5 /* Constant.swift */; };
 		C75E03072667B36800DA04E5 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E03062667B36800DA04E5 /* ImageViewController.swift */; };
+		C75E03092667DE5800DA04E5 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E03082667DE5800DA04E5 /* PopUp.swift */; };
+		C75E030C26681A5300DA04E5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E030B26681A5300DA04E5 /* Reachability.swift */; };
+		C75E030F26681CFC00DA04E5 /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E030E26681CFB00DA04E5 /* NetworkCheck.swift */; };
+		C75E031126681FA200DA04E5 /* InternetConnectionMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E031026681FA200DA04E5 /* InternetConnectionMessageViewController.swift */; };
+		C75E03132668289A00DA04E5 /* ErrorMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E03122668289A00DA04E5 /* ErrorMessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		C75E0300266664DC00DA04E5 /* GalleryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTableViewCell.swift; sourceTree = "<group>"; };
 		C75E03032666660100DA04E5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C75E03062667B36800DA04E5 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		C75E03082667DE5800DA04E5 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
+		C75E030B26681A5300DA04E5 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		C75E030E26681CFB00DA04E5 /* NetworkCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
+		C75E031026681FA200DA04E5 /* InternetConnectionMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionMessageViewController.swift; sourceTree = "<group>"; };
+		C75E03122668289A00DA04E5 /* ErrorMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,7 @@
 		C75E02DD2666053D00DA04E5 /* PhotoGalleryApp */ = {
 			isa = PBXGroup;
 			children = (
+				C75E030A26681A2F00DA04E5 /* Resources */,
 				C75E02F8266659BF00DA04E5 /* Model */,
 				C75E03052667640900DA04E5 /* View */,
 				C75E02F7266659AB00DA04E5 /* ViewModel */,
@@ -87,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				C75E02F52666599F00DA04E5 /* GalleryManager.swift */,
+				C75E03082667DE5800DA04E5 /* PopUp.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -112,6 +124,9 @@
 			children = (
 				C75E02E22666053D00DA04E5 /* GalleryViewController.swift */,
 				C75E03062667B36800DA04E5 /* ImageViewController.swift */,
+				C75E031026681FA200DA04E5 /* InternetConnectionMessageViewController.swift */,
+				C75E03122668289A00DA04E5 /* ErrorMessageViewController.swift */,
+				C75E030D26681CDD00DA04E5 /* Extensions */,
 				C75E02FF266664AC00DA04E5 /* Cell */,
 			);
 			path = Controller;
@@ -139,6 +154,22 @@
 				C75E02E42666053D00DA04E5 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C75E030A26681A2F00DA04E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C75E030B26681A5300DA04E5 /* Reachability.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C75E030D26681CDD00DA04E5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C75E030E26681CFB00DA04E5 /* NetworkCheck.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,11 +243,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C75E02FA26665A1D00DA04E5 /* GalleryData.swift in Sources */,
+				C75E030F26681CFC00DA04E5 /* NetworkCheck.swift in Sources */,
+				C75E03132668289A00DA04E5 /* ErrorMessageViewController.swift in Sources */,
 				C75E03072667B36800DA04E5 /* ImageViewController.swift in Sources */,
 				C75E0301266664DC00DA04E5 /* GalleryTableViewCell.swift in Sources */,
 				C75E03042666660100DA04E5 /* Constant.swift in Sources */,
 				C75E02FE2666635900DA04E5 /* GalleryViewModel.swift in Sources */,
 				C75E02E32666053D00DA04E5 /* GalleryViewController.swift in Sources */,
+				C75E03092667DE5800DA04E5 /* PopUp.swift in Sources */,
+				C75E031126681FA200DA04E5 /* InternetConnectionMessageViewController.swift in Sources */,
+				C75E030C26681A5300DA04E5 /* Reachability.swift in Sources */,
 				C75E02DF2666053D00DA04E5 /* AppDelegate.swift in Sources */,
 				C75E02F62666599F00DA04E5 /* GalleryManager.swift in Sources */,
 				C75E02E12666053D00DA04E5 /* SceneDelegate.swift in Sources */,
